@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "docs/Introduction.md"
+    },
+    {
+      "type": "divider",
+      "title": "Authentication methods"
+    },
+    {
+      "type": "item",
+      "title": "Client identification",
+      "uri": "docs/Authentication-methods/Client-identification.md"
+    },
+    {
+      "type": "item",
+      "title": "Client access token",
+      "uri": "docs/Authentication-methods/Client-access-token.md"
+    },
+    {
+      "type": "item",
+      "title": "User access token",
+      "uri": "docs/Authentication-methods/User-access-token.md"
+    }
+  ]
+}

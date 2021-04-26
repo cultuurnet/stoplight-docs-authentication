@@ -1,4 +1,4 @@
-# Quick start
+# Introduction
 
 ## How to get client credentials
 
