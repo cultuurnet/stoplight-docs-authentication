@@ -11,8 +11,9 @@ You can specify your client id in requests to these APIs in two ways.
 You can specify your client id as an `x-client-id` HTTP header. For example on Search API 3:
 
 ```
-curl https://search-test.uitdatabank.be/events/ \
-  -H "x-client-id: YrgBoha6aRSrfIcsFt8PISe4u0EoM45k"
+GET /events/ HTTP/1.1
+Host: https://search-test.uitdatabank.be
+X-Client-Id: YrgBoha6aRSrfIcsFt8PISe4u0EoM45k
 ```
 
 Using a header can be helpful to only have to set it once depending on the programming language and/or HTTP library you are using. It also reduces the URL size.
@@ -36,7 +37,8 @@ Set your client id for the **test environment** in the **Headers** tab in the fo
 Alternatively you can specify a `clientId` URL query parameter instead of an HTTP header. For example on Search API 3:
 
 ```
-curl https://search-test.uitdatabank.be/events/?clientId=YrgBoha6aRSrfIcsFt8PISe4u0EoM45k
+GET /events/?clientId=YrgBoha6aRSrfIcsFt8PISe4u0EoM45k HTTP/1.1
+Host: https://search-test.uitdatabank.be
 ```
 
 Using a query parameter can be helpful for link sharing or when doing quick manual tests.
