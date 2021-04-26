@@ -1,5 +1,7 @@
 # Client access token
 
+## Overview
+
 Client access tokens are used to secure API endpoints that require more robust authentication between two backend systems.
 
 Examples include EntryAPI 3 and various endpoints on the UiTPAS API, where data needs to be written and/or more sensitive data gets exposed.
