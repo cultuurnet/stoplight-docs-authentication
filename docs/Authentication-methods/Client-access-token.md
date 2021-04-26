@@ -31,9 +31,13 @@ Read on below to see a concrete example of how to get a client access token for 
 
 ## Example flow
 
-To obtain a client access token, send a `POST` request to the `/oauth/token` endpoint of the authentication server for the test or production environment with the following JSON body:
+To obtain a client access token, send a `POST` request to the `/oauth/token` endpoint of the authentication server for the test or production environment with a JSON body like this:
 
-```json
+```http
+GET /oauth/token HTTP/1.1
+Host: https://account-test.uitid.be
+Content-Type: application/json
+
 {
   "client_id": "YOUR_CLIENT_ID",
   "client_secret": "YOUR_CLIENT_SECRET",
@@ -42,7 +46,7 @@ To obtain a client access token, send a `POST` request to the `/oauth/token` end
 }
 ```
 
-The URLs for the authentication servers are:
+The possible hosts for the authentication servers are:
 - Testing environment: `https://account-test.uitid.be`
 - Production environment: `https://account.uitid.be`
 
@@ -57,7 +61,9 @@ The URLs for the authentication servers are:
 
 After sending your request to the correct environment for your client credentials, you will get a response with a JSON body like this:
 
-```json
+```http
+HTTP/1.1 200 OK
+
 {
  "access_token":"YOUR_ACCESS_TOKEN",
  "scope":"https://api.publiq.be/uit/mailing_m2m",
@@ -68,8 +74,10 @@ After sending your request to the correct environment for your client credential
 
 You can then include the returned access token as a [Bearer token](https://swagger.io/docs/specification/authentication/bearer-authentication/) in the `Authorization` header of your requests:
 
-```
-curl https://api.uitpas.be/example -H "authorization: Bearer YOUR_ACCESS_TOKEN"
+```http
+GET /example HTTP/1.1
+Host: https://api.uitpas.be
+Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
 <!-- theme: warning -->

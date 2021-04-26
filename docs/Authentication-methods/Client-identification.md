@@ -10,7 +10,7 @@ You can specify your client id in requests to these APIs in two ways.
 
 You can specify your client id as an `x-client-id` HTTP header. For example on Search API 3:
 
-```
+```http
 GET /events/ HTTP/1.1
 Host: https://search-test.uitdatabank.be
 X-Client-Id: YrgBoha6aRSrfIcsFt8PISe4u0EoM45k
@@ -36,7 +36,7 @@ Set your client id for the **test environment** in the **Headers** tab in the fo
 
 Alternatively you can specify a `clientId` URL query parameter instead of an HTTP header. For example on Search API 3:
 
-```
+```http
 GET /events/?clientId=YrgBoha6aRSrfIcsFt8PISe4u0EoM45k HTTP/1.1
 Host: https://search-test.uitdatabank.be
 ```
