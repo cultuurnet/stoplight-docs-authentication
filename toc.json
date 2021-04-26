@@ -2,8 +2,8 @@
   "items": [
     {
       "type": "item",
-      "title": "Introduction",
-      "uri": "docs/Introduction.md"
+      "title": "Overview",
+      "uri": "docs/Overview.md"
     },
     {
       "type": "divider",
