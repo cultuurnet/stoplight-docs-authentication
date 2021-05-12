@@ -17,6 +17,7 @@ Usually used by APIs that need to provide info to anonymous users in web browser
 - ✅ Suitable for frontend applications
 - ✅ Suitable for backend applications
 - ⏱ Does not expire
+- 🔓 Offers no real security, so only used in APIs that expose public information
 
 ## Tokens
 
@@ -31,6 +32,7 @@ API endpoints that support the authentication of an API client with a client id 
 - ❌ Not suitable for frontend applications
 - ✅ Suitable for backend applications
 - ⏱ Expires, but can be renewed automatically
+- 🔐 Secure, used by APIs that work with private information and/or write access
 
 ### User access tokens
 
@@ -41,6 +43,7 @@ Usually used in situations where a user will log in through publiq's UiTID servi
 - ✅ Suitable for frontend applications
 - ✅ Suitable for backend applications
 - ⏱ Expires and requires your user to log in again through UiTID
+- 🔐 Secure, used by APIs that work with private information and/or write access
 
 ### Expiration
 
