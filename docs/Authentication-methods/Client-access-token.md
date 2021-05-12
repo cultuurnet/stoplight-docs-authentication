@@ -80,10 +80,10 @@ Host: https://api.uitpas.be
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-<!-- theme: warning -->
+<!-- theme: success -->
 
 > ##### Caching tokens
-> Make sure to **cache and reuse** the obtained client access token for as long as possible! Do not request a new access token for each API request you make. The expiration time of a client access token is usually 24 hours. 
+> Make sure to **cache and reuse** the obtained client access token for as long as possible. Do not request a new access token for each API request you make. The expiration time of a client access token is usually 24 hours. 
 > 
 > The response with your access token will include an `expires_in` parameter with the exact expiration time in seconds. You can make your cached token expire after that time has elapsed and request a new one then. Another option is to not look at the expiration time and request a new token as soon as you get a `401` or `403` response from an API, indicating that the token has expired.
 
