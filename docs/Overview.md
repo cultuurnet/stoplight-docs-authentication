@@ -21,6 +21,8 @@ Usually used by APIs that need to provide info to anonymous users in web browser
 
 ## Tokens
 
+API endpoints that expose private information and/or allow write access require a token to authenticate.
+
 Most API endpoints that require a token accept both _**client** access tokens_ and _**user** access tokens_. Only some few exceptions require one or the other. For example an endpoint to request info on the current user will always require a user access token.
 
 > If an endpoint accepts both client and user access tokens, you only need to provide one or the other, not both.
