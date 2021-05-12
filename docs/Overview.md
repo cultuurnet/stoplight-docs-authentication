@@ -14,52 +14,58 @@ API endpoints that require no real authentication but need to know what client i
 
 Usually used by APIs that need to provide info to anonymous users in web browsers, for example [Search API 3](https://publiq.stoplight.io/docs/uitdatabank/reference/Search-API.v3.json).
 
-## Client access tokens
+- ✅ Suitable for frontend applications
+- ✅ Suitable for backend applications
+- ⏱ Does not expire
 
-API endpoints that require the authentication of an API client with secret credentials use [Client access tokens](Authentication-methods/Client-access-token.md). 
+## Tokens
 
-Usually used for server-to-server communication to send data or retrieve sensitive data. For example, to [import events into UiTdatabank](https://publiq.stoplight.io/docs/uitdatabank/docs/Guides/Imports/Importing-events.md) or [register ticket sales in UiTPAS](https://publiq.stoplight.io/docs/uitpas/docs/Guides/Ticket-prices-and-sales.md).
+Most API endpoints that require a token accept both _**client** access tokens_ and _**user** access tokens_. Only some few exceptions require one or the other. For example an endpoint to request info on the current user will always require a user access token.
 
-## User access tokens
+> If an endpoint accepts both client and user access tokens, you only need to provide one or the other, not both.
 
-API endpoints that require authentication as a user use [User access tokens](Authentication-methods/User-access-token.md). 
+### Client access tokens
+
+API endpoints that support the authentication of an API client with a client id and client secret use [Client access tokens](Authentication-methods/Client-access-token.md).
+
+- ❌ Not suitable for frontend applications
+- ✅ Suitable for backend applications
+- ⏱ Expires, but can be renewed automatically
+
+### User access tokens
+
+API endpoints that support authentication as a user use [User access tokens](Authentication-methods/User-access-token.md). 
 
 Usually used in situations where a user will log in through publiq's UiTID service and the API client will make requests in that user's name.
 
+- ✅ Suitable for frontend applications
+- ✅ Suitable for backend applications
+- ⏱ Expires and requires your user to log in again through UiTID
+
+### Expiration
+
+Both _client access tokens_ and _user access tokens_ expire after a period of time. We reserve the ability to change this period of time whenever we see fit, so you should never hardcode this in your app somewhere. Instead keep using your token until you get a `401` response from an API endpoint, which indicates that the token has expired.
+
+To get a new client access token, you can simply request a new one using your client id and secret as described in [Client access tokens](Authentication-methods/Client-access-token.md).
+
+To get a new user access token, you will need to let your user login again as described in [User access tokens](Authentication-methods/User-access-token.md).
+ 
 ## When to use which method
 
-Which authentication method you need to use will in the first place be determined by which endpoint(s) you want to access. 
+Which authentication method you need to use will in the first place be **determined by which endpoint(s) you want to access**. 
 
-Usually an API endpoint will either require _client identification_, **OR** they will require a token and in most cases support both a _user access token_ or a _client access token_ (except for some edge cases).
+Usually an API endpoint will either require _client identification_, **OR** they will require a token. In most cases endpoints that require token support both a _user access token_ or a _client access token_ (except for some rare edge cases).
 
-So the **first step to decide which method to use**, is to **check the documentation of the endpoints** you will use to determine which methods they support.
+- If the endpoint requires [client identification](Authentication-methods/Client-identification.md), you can use this by simply including your client id in the request.
+- If the endpoint uses tokens and accepts both [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), the decision can be made based on the following factors:
 
-- If the endpoint requires **client identification**, you can use it by simply including your client id in the request.
-- If the endpoint uses tokens and accepts both **user access tokens** and **client access tokens**, the decision can be made based on the following factors:
-
-Token type | Requires a user logged in via UiTID | Usable in frontend | Usable in backend
+Token type | Requires a user login via UiTID | Usable in frontend | Usable in backend
 ---------|----------|---------
  User access token | ✅ | ✅ | ✅
  Client access token | ❌ | ❌ | ✅
 
-Here are some example scenario's to help you decide.
 
-#### Scenario 1: Your users will log in through UiTID
+Simply put, if you have a backend and don't want your users to log in through UiTID, you should use **client access tokens**.
 
-If your app's users log in through UiTID, your application will get a user access token for the logged in user which is valid for a predefined period of time after which the user is considered to be logged out.
+If you do not have a backend, or your users will log in through UiTID anyway, you should use **user access tokens**.
 
-You can use this token to authenticate requests to endpoints that support _user access tokens_, and you can use it in both a frontend application and/or a backend application.
-
-#### Scenario 2: Your app has no backend
-
-If your app has no backend and needs to communicate with publiq's APIs through a frontend application, you should only use _user access tokens_ or _client identification_, **never _client access tokens_**. This is because you can only get client access tokens by requesting them using your client id and secret, and you should make sure that your client secret stays secret. If you put your client secret in a frontend application, it becomes public.
-
-_User access tokens_ and _client identification_ on the other hand can safely be used in a frontend application.
-
-#### Scenario 3: Your app has a backend
-
-If your app has a backend, and you don't want your users to have to log in through UiTID, you can use _client access tokens_ to make requests in the name of your API client instead of a user.
-
-This setup is also ideal for machine to machine communication, for example for imports on EntryAPI.
-
-Client access tokens do expire, but your app's backend can always request a new client access token using it's client id and secret which don't change. So you can also use this authentication method in long-running background processes without user interaction for example.
