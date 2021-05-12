@@ -63,10 +63,12 @@ Which authentication method you need to use will in the first place be **determi
 
 Usually an API endpoint will either require _client identification_, **OR** they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some rare edge cases).
 
-- If the endpoint requires [client identification](Authentication-methods/Client-identification.md), you can use this by simply including your client id in the request.
-- If the endpoint uses tokens and accepts both [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), the decision can be made based on the following factors:
+- If the endpoint allows [client identification](Authentication-methods/Client-identification.md), you only need to include your client id in the request.
+- If the endpoint **only** allows [user access tokens](Authentication-methods/User-access-token.md), you need to let your end user log in through UiTID and use the resulting token.
+- If the endpoint **only** allows [client access tokens](Authentication-methods/Client-access-token.md), you need to fetch a token using your client id and secret from a backend.
+- If the endpoint accepts **both** [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), the decision can be made based on the following factors:
 
-Token type | Requires a user login via UiTID | Usable in frontend | Usable in backend
+Token type | Requires a user login via UiTID | Token can be requested via frontend | Token can be requested via backend
 ---------|----------|---------
  User access token | ✅ | ✅ | ✅
  Client access token | ❌ | ❌ | ✅
