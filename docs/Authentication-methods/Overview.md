@@ -2,12 +2,6 @@
 
 Each publiq API supports one or more authentication methods, depending on the functionality that it provides.
 
-> ##### How to get client credentials
-> 
-> Every integration on publiq's APIs requires a client id and in most cases also a client secret to authenticate requests.
-> 
-> To get client credentials for your integration, contact jean-marie@publiq.be.
-
 ## When to use which method
 
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
