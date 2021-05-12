@@ -1,4 +1,4 @@
-# Authentication
+# Overview
 
 Each publiq API supports one or more authentication methods, depending on the functionality that it provides.
 
