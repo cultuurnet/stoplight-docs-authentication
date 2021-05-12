@@ -8,6 +8,17 @@ Each publiq API supports one or more authentication methods, depending on the fu
 > 
 > To get client credentials for your integration, contact jean-marie@publiq.be.
 
+## When to use which method
+
+Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
+
+Usually an API endpoint will either require _client identification_, **OR** they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some rare edge cases).
+
+- If the endpoint allows [client identification](Authentication-methods/Client-identification.md), you only need to include your client id in the request.
+- If the endpoint **only** allows [user access tokens](Authentication-methods/User-access-token.md), you need to let your end user log in through UiTID and use the resulting token.
+- If the endpoint **only** allows [client access tokens](Authentication-methods/Client-access-token.md), you need to fetch a token using your client id and secret from a backend.
+- If the endpoint accepts **both** [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), you can pick whatever token type is best suited to your situation. (See their respective documentation for more info.)
+
 ## Client identification
 
 API endpoints that require no real authentication but need to know what client is accessing it for customization and technical support reasons use [Client identification](Authentication-methods/Client-identification.md). 
@@ -56,15 +67,4 @@ Instead keep using your token until you get a `401` response from an API endpoin
 To get a new client access token, you can simply request a new one using your client id and secret as described in [Client access tokens](Authentication-methods/Client-access-token.md).
 
 To get a new user access token, you will need to let your user login again as described in [User access tokens](Authentication-methods/User-access-token.md).
- 
-## When to use which method
-
-Which authentication method you need to use will in the first place be **determined by which endpoint(s) you want to access**. 
-
-Usually an API endpoint will either require _client identification_, **OR** they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some rare edge cases).
-
-- If the endpoint allows [client identification](Authentication-methods/Client-identification.md), you only need to include your client id in the request.
-- If the endpoint **only** allows [user access tokens](Authentication-methods/User-access-token.md), you need to let your end user log in through UiTID and use the resulting token.
-- If the endpoint **only** allows [client access tokens](Authentication-methods/Client-access-token.md), you need to fetch a token using your client id and secret from a backend.
-- If the endpoint accepts **both** [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), you can pick whatever token type is best suited to your situation. (See their respective documentation for more info.)
 
