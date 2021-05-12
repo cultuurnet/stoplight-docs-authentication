@@ -13,8 +13,8 @@ Each publiq API supports one or more authentication methods, depending on the fu
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
 
 - If the endpoint allows [client identification](#client-identification), you only need to include your client id in the request.
-- If the endpoint **only** allows [user access tokens](#user-access-tokens), you need to let your end user log in through UiTID and use the resulting token.
 - If the endpoint **only** allows [client access tokens](#client-access-tokens), you need to fetch a token using your client id and secret from a backend.
+- If the endpoint **only** allows [user access tokens](#user-access-tokens), you need to let your end user log in through UiTID and use the resulting token.
 - If the endpoint accepts **both** [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens), you can pick whatever token type is best suited to your situation. (See their respective documentation for more info.)
 
 Usually an API endpoint will either require _client identification_, or they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some edge cases).
