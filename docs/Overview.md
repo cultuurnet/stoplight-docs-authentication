@@ -49,7 +49,7 @@ Usually used in situations where a user will log in through publiq's UiTID servi
 
 Both _client access tokens_ and _user access tokens_ expire after a period of time. We reserve the ability to change this period of time whenever we see fit, so you should never hardcode this in your app somewhere. 
 
-Instead keep using your token until you get a `401` response from an API endpoint, which indicates that the token has expired, or use the `expires_in` property that is included in the response with your token when you request one to determine the lifetime of the token.
+Instead keep using your token until you get a `401` response from an API endpoint, which indicates that the token has expired. Or use the `expires_in` property that is included in the response with your token when you request one to determine the lifetime of the token.
 
 To get a new client access token, you can simply request a new one using your client id and secret as described in [Client access tokens](Authentication-methods/Client-access-token.md).
 
