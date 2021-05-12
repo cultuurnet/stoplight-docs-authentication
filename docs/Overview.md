@@ -47,7 +47,7 @@ Usually used in situations where a user will log in through publiq's UiTID servi
 - ⏱ Expires and requires your user to log in again through UiTID
 - 🔐 Secure, used by APIs that work with private information and/or write access
 
-### Expiration
+### Token expiration
 
 Both _client access tokens_ and _user access tokens_ expire after a period of time. We reserve the ability to change this period of time whenever we see fit, so you should never hardcode this in your app somewhere. 
 
