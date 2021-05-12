@@ -23,6 +23,15 @@
       "type": "item",
       "title": "User access token",
       "uri": "docs/Authentication-methods/User-access-token.md"
+    },
+    {
+      "type": "divider",
+      "title": "Other"
+    },
+    {
+      "type": "item",
+      "title": "CORS",
+      "uri": "docs/CORS.md"
     }
   ]
 }
