@@ -34,7 +34,7 @@ Read on below to see a concrete example of how to get a client access token for 
 To obtain a client access token, send a `POST` request to the `/oauth/token` endpoint of the authentication server for the test or production environment with a JSON body like this:
 
 ```http
-GET /oauth/token HTTP/1.1
+POST /oauth/token HTTP/1.1
 Host: https://account-test.uitid.be
 Content-Type: application/json
 
