@@ -1,13 +1,13 @@
 {
   "items": [
     {
-      "type": "item",
-      "title": "Overview",
-      "uri": "docs/Overview.md"
-    },
-    {
       "type": "divider",
       "title": "Authentication methods"
+    },
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/Authentication-methods/Overview.md"
     },
     {
       "type": "item",
