@@ -61,7 +61,7 @@ To get a new user access token, you will need to let your user login again as de
 
 Which authentication method you need to use will in the first place be **determined by which endpoint(s) you want to access**. 
 
-Usually an API endpoint will either require _client identification_, **OR** they will require a token. In most cases endpoints that require a token support both a _user access token_ or a _client access token_ (except for some rare edge cases).
+Usually an API endpoint will either require _client identification_, **OR** they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some rare edge cases).
 
 - If the endpoint requires [client identification](Authentication-methods/Client-identification.md), you can use this by simply including your client id in the request.
 - If the endpoint uses tokens and accepts both [user access tokens](Authentication-methods/User-access-token.md) and [client access tokens](Authentication-methods/Client-access-token.md), the decision can be made based on the following factors:
