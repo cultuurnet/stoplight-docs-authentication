@@ -50,7 +50,7 @@ The possible hosts for the authentication servers are:
 - Testing environment: `https://account-test.uitid.be`
 - Production environment: `https://account.uitid.be`
 
-<!-- theme: warning -->
+<!-- theme: info -->
 
 > ##### Environments
 > Every publiq API has a testing and production environment. **Initially when building your integration, you should connect to the testing environment** of the APIs that you integrate with.
