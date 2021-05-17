@@ -27,7 +27,7 @@ Set your client id for the **test environment** in the **Headers** tab in the fo
   url: 'https://search-test.uitdatabank.be/events/',
   method: "GET",
   headers: {
-    "x-client-id": "YOUR_CLIENT_ID"
+    "x-client-id": "YOUR_TEST_ENV_CLIENT_ID"
   }
 }
 ```
@@ -52,7 +52,7 @@ Set your client id for the **test environment** in the **Query** tab in the form
   url: 'https://search-test.uitdatabank.be/events/',
   method: "GET",
   query: {
-    "clientId": "YOUR_CLIENT_ID"
+    "clientId": "YOUR_TEST_ENV_CLIENT_ID"
   }
 }
 ```
