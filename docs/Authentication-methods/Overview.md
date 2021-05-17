@@ -11,7 +11,7 @@ Which authentication method you need to use will in the first place be **determi
 - If the endpoint **only** allows [user access tokens](#user-access-tokens), you need to let your end user log in through UiTID and use the resulting token.
 - If the endpoint accepts **both** [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens), you can pick whatever token type is best suited to your situation. (See their respective documentation for more info.)
 
-Usually an API endpoint will either require _client identification_, or they will require a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some edge cases).
+Usually an API endpoint will either require _client identification_ or a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some edge cases).
 
 ## Client identification
 
