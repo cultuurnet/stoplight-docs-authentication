@@ -18,7 +18,7 @@ X-Client-Id: YrgBoha6aRSrfIcsFt8PISe4u0EoM45k
 
 Using a header can be helpful to only have to set it once depending on the programming language and/or HTTP library you are using. It also reduces the URL size.
 
-**Try it!**
+#### Try it!
 
 Set your client id for the **test environment** in the **Headers** tab in the form below and send your request to try it out!
 
@@ -43,7 +43,7 @@ Host: https://search-test.uitdatabank.be
 
 Using a query parameter can be helpful for link sharing or when doing quick manual tests.
 
-**Try it!**
+#### Try it!
 
 Set your client id for the **test environment** in the **Query** tab in the form below and send your request to try it out!
 
