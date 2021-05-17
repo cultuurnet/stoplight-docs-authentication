@@ -6,11 +6,11 @@ Client access tokens are used to secure API endpoints that require more robust a
 
 Examples include EntryAPI 3 and various endpoints on the UiTPAS API, where data needs to be written and/or more sensitive data gets exposed.
 
-Before accessing an API like this, a client needs to obtain a client access token using its credentials (the client id and secret).
+Before accessing an API like this, a client needs to obtain a client access token using its credentials (the client id and secret) from publiq's authorization server.
 
-![Auth Diagram](https://acc.uitid.be/api/publiq-auth-diagram.png)
+![](../../assets/images/client-access-token-flow.png)
 
-1. The client makes a request to the authorization server. It sends its client id and client secret, along with the required `audience` needed to access the API. All publiq APIs currently share the same audience: `https://api.publiq.be`. 
+1. The client makes a request to the authorization server. It sends its client `id` and client `secret`, along with the required `audience` needed to access the API. All publiq APIs currently share the same audience: `https://api.publiq.be`.
 
 2. The authorization server validates the request and, if successful, sends a response with an access token.
 
@@ -24,7 +24,7 @@ Before accessing an API like this, a client needs to obtain a client access toke
 <!-- theme: info -->
 
 > ##### Auth0
-> publiq currently uses [Auth0](https://auth0.com/) as its authentication and authorization service. For more in-depth information about client access tokens, please refer to the [Auth0 documentation](https://auth0.com/docs/). (Client access token are also known as machine-to-machine tokens in the Auth0 docs.)
+> publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. For more in-depth information about client access tokens, please refer to the [Auth0 documentation](https://auth0.com/docs/). (Client access token are also known as machine-to-machine tokens in the Auth0 docs.)
 
 Read on below to see a concrete example of how to get a client access token for your client credentials.
 
@@ -55,7 +55,7 @@ The possible hosts for the authentication servers are:
 > ##### Environments
 > Every publiq API has a testing and production environment. **Initially when building your integration, you should connect to the testing environment** of the APIs that you integrate with.
 > 
-> These different environments will require client access tokens from the respective testing and production environments of the authentication service.
+> These different environments will require client access tokens from the respective testing and production environments of the authorization service.
 > 
 > Additionally, **your client id and secret will be different** for the testing environment and production environment.
 
@@ -65,10 +65,10 @@ After sending your request to the correct environment for your client credential
 HTTP/1.1 200 OK
 
 {
- "access_token":"YOUR_ACCESS_TOKEN",
- "scope":"https://api.publiq.be/uit/mailing_m2m",
- "expires_in":86400,
- "token_type":"Bearer"
+ "access_token": "YOUR_ACCESS_TOKEN",
+ "scope": "https://api.publiq.be/uit/mailing_m2m",
+ "expires_in": 86400,
+ "token_type": "Bearer"
 }
 ```
 
@@ -85,7 +85,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 > ##### Caching tokens
 > Make sure to **cache and reuse** the obtained client access token for as long as possible. Do not request a new access token for each API request you make. The expiration time of a client access token is usually 24 hours. 
 > 
-> The response with your access token will include an `expires_in` parameter with the exact expiration time in seconds. You can make your cached token expire after that time has elapsed and request a new one then. Another option is to not look at the expiration time and request a new token as soon as you get a `401` or `403` response from an API, indicating that the token has expired.
+> The response with your access token will include an `expires_in` parameter with the exact expiration time in seconds. You can make your cached token expire after that time has elapsed and request a new one then. Another option is to not look at the expiration time and request a new token as soon as you get a `401` response from an API, indicating that the token has expired.
 
 
 ## Try it out!
