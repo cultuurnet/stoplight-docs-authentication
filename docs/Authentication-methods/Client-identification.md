@@ -59,6 +59,6 @@ Set your client id for the **test environment** in the **Query** tab in the form
 
 ## When to use which method
 
-When using client identification from a **frontend application** it is advisable to use the `clientId` query parameter because using the `x-client-id` header requires [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), while using an extra query parameter doesn't.
+When using client identification from a **frontend application** it is advisable to use the `clientId` query parameter because using the `x-client-id` header requires [CORS](../CORS.md), while using an extra query parameter doesn't.
 
 If you are using client identification on requests from a **backend application**, you can choose whatever method you like best. Using the `x-client-id` header might be easier in some HTTP libraries because you can usually define some global headers that you want to send for every request, but this depends on the programming language and HTTP library.
