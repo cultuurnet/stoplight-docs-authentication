@@ -7,22 +7,22 @@
     {
       "type": "item",
       "title": "Overview",
-      "uri": "docs/Authentication-methods/Overview.md"
+      "uri": "docs/methods.md"
     },
     {
       "type": "item",
       "title": "Client identification",
-      "uri": "docs/Authentication-methods/Client-identification.md"
+      "uri": "docs/client-identification.md"
     },
     {
       "type": "item",
       "title": "Client access token",
-      "uri": "docs/Authentication-methods/Client-access-token.md"
+      "uri": "docs/client-access-token.md"
     },
     {
       "type": "item",
       "title": "User access token",
-      "uri": "docs/Authentication-methods/User-access-token.md"
+      "uri": "docs/user-access-token.md"
     },
     {
       "type": "divider",
@@ -31,7 +31,7 @@
     {
       "type": "item",
       "title": "CORS",
-      "uri": "docs/CORS.md"
+      "uri": "docs/cors.md"
     }
   ]
 }
