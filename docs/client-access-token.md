@@ -2,13 +2,11 @@
 
 ## Overview
 
-Client access tokens are used to secure API endpoints that require more robust authentication between two backend systems.
+Client access tokens are used to secure API endpoints that require more robust authentication than [client identification](./client-identification.md) between two _backend_ systems.
 
-Examples include EntryAPI 3 and various endpoints on the UiTPAS API, where data needs to be written and/or more sensitive data gets exposed.
+Before accessing an API endpoint like this, a client needs to obtain a client access token using its credentials (the client id and secret) from publiq's authorization server.
 
-Before accessing an API like this, a client needs to obtain a client access token using its credentials (the client id and secret) from publiq's authorization server.
-
-![](../../assets/images/client-access-token-flow.png)
+![](../assets/images/client-access-token-flow.png)
 
 1. The client makes a request to the authorization server. It sends its client `id` and client `secret`, along with the required `audience` needed to access the API. All publiq APIs currently share the same audience: `https://api.publiq.be`.
 
@@ -18,8 +16,13 @@ Before accessing an API like this, a client needs to obtain a client access toke
 
 <!-- theme: warning -->
 
-> ##### Security warning
-> Because you need to specify your client secret to retrieve a client access token, **you should only perform this request from a backend server** and not through a client-side application like a web browser where anyone could see your client secret!
+> ##### Security warnings ⚠️
+> - ✅ **Always** request a client access token from a **backend** application
+> - ❌ **Never** use or expose your client access token from a **frontend** application
+>
+> If you use or store your client secret or client access token in a frontend application they can be **stolen** and **abused** and your client will get blocked!
+>
+> If you need to do API calls from a frontend application, use [client identification](./client-identification.md) or a [user access token](./user-access-token.md) depending on what the API endpoint requires.
 
 <!-- theme: info -->
 
