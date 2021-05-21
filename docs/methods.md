@@ -6,12 +6,17 @@ Each publiq API supports one or more authentication methods, depending on the fu
 
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
 
-- If the endpoint allows [client identification](#client-identification), you only need to include your client id in the request.
-- If the endpoint **only** allows [client access tokens](#client-access-tokens), you need to fetch a token using your client id and secret from a backend.
-- If the endpoint **only** allows [user access tokens](#user-access-tokens), you need to let your end user log in through UiTID and use the resulting token.
-- If the endpoint accepts **both** [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens), you can pick whatever token type is best suited to your situation. (See their respective documentation for more info.)
+There are 4 possible scenario's for an endpoint:
 
-Usually an API endpoint will either require _client identification_ or a token. Most endpoints that require a token support both _user access tokens_ and _client access tokens_ (except for some edge cases).
+1. The endpoint allows [client identification](#client-identification). You will only need to include your client id in the request and you don't need a token.
+2. The endpoint accepts both [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens). You can pick whatever token type is best suited to your situation. See their respective documentation for more info.
+3. The endpoint requires _specifically_ [**client** access tokens](#client-access-tokens) . You will need to fetch a token using your client id and secret from a backend.
+4. The endpoint requires _specifically_ [**user** access tokens](#user-access-tokens). You will need to let your end user log in through UiTID and use the resulting token.
+
+You can find the authentication method(s) that an endpoint supports in its own documentation.
+
+> ##### Most common scenario's
+> Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
 
 ## Client identification
 
