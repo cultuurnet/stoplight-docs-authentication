@@ -1,22 +1,20 @@
 # Overview
 
-Each publiq API supports one or more authentication methods, depending on the functionality that it provides.
+Each publiq API supports one or more authentication methods, depending on the security that it requires.
 
 ## When to use which method
 
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
 
-There are 4 possible scenarios for an endpoint:
+There are 5 possible scenarios for an endpoint:
 
-1. The endpoint allows [client identification](#client-identification). You will only need to include your client id in the request and you don't need a token.
-2. The endpoint accepts both [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens). You can pick whatever token type is best suited to your situation. See their respective documentation for more info.
-3. The endpoint requires _specifically_ [**client** access tokens](#client-access-tokens) . You will need to fetch a token using your client id and secret from a backend.
-4. The endpoint requires _specifically_ [**user** access tokens](#user-access-tokens). You will need to let your end user log in through UiTID and use the resulting token.
+1. The endpoint requires **no authentication** at all. For example fetching the JSON representation of a specific event from UiTdatabank.
+2. The endpoint requires **[client identification](#client-identification)**. You will only need to include your client id in the request and you don't need a token. For example Search API.
+3. The endpoint accepts **both [user access tokens](#user-access-tokens) or [client access tokens](#client-access-tokens)**. You can pick whatever token type is best suited to your situation. See their respective documentation for more info.
+4. The endpoint requires [**client** access tokens](#client-access-tokens) _specifically_. You will need to fetch a token using your client id and secret from a backend.
+5. The endpoint requires [**user** access tokens](#user-access-tokens) _specifically_. You will need to let your end user log in through UiTID and use the resulting token.
 
-You can find the authentication method(s) that an endpoint supports in its own documentation.
-
-> ##### Most common scenarios
-> Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
+You can find the authentication method(s) that an endpoint supports in its own documentation. Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
 
 ## Client identification
 
