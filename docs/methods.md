@@ -6,7 +6,7 @@ Each publiq API supports one or more authentication methods, depending on the fu
 
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**. 
 
-There are 4 possible scenario's for an endpoint:
+There are 4 possible scenarios for an endpoint:
 
 1. The endpoint allows [client identification](#client-identification). You will only need to include your client id in the request and you don't need a token.
 2. The endpoint accepts both [user access tokens](#user-access-tokens) and [client access tokens](#client-access-tokens). You can pick whatever token type is best suited to your situation. See their respective documentation for more info.
@@ -15,7 +15,7 @@ There are 4 possible scenario's for an endpoint:
 
 You can find the authentication method(s) that an endpoint supports in its own documentation.
 
-> ##### Most common scenario's
+> ##### Most common scenarios
 > Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
 
 ## Client identification
