@@ -16,6 +16,8 @@ There are 5 possible scenarios for an endpoint:
 
 You can find the authentication method(s) that an endpoint supports in its own documentation. Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
 
+Below you can find a short overview of how each authentication method works.
+
 ## Client identification
 
 API endpoints that require no real authentication but need to know what client is accessing it for customization and technical support reasons use [Client identification](Authentication-methods/Client-identification.md). 
