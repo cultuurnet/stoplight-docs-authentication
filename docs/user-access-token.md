@@ -7,11 +7,6 @@
 > - https://confluence.uitdatabank.be/display/UITIDV2/How+to+integrate+UITIDv2+authentication+%28Auth0%29+in+your+project
 > - https://auth0.com/docs/architecture-scenarios/spa-api
 
-<!-- theme: danger -->
-
-> ##### TODO's, remove before merge!
-> - Callback URLs?
-
 ## Overview
 
 \[To do: document what the difference is between a regular web application and a frontend application\]
@@ -39,7 +34,19 @@ This flow does not require a client secret like the authorization flow for regul
 
 4. Done! Your app can now use the access token to call the API on behalf of the user. 🎉
 
+### Redirecting to the authorization server
+
 \[To do\: Document concrete info like URLs of the servers, correct path, what parameters to include]
 
-\[To do\: Document not to store token in cookie/localStorage but use silent login?]
+- audience `https://api.publiq.be`
+- [scope](./scopes.md)
+- redirect_uri (+ how to configure? contact?)
+- client_id
+- response_type `id_token token`
+- state ?
+- prompt `none` ?
+- ... see https://auth0.com/docs/api/authentication#authorize-application
 
+### Storing tokens
+
+\[To do\: Document not to store token in cookie/localStorage but use silent login?]
