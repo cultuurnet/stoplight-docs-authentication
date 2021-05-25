@@ -27,7 +27,7 @@ Before accessing an API endpoint like this, a client needs to obtain a client ac
 <!-- theme: info -->
 
 > ##### Auth0
-> publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. For more in-depth information about client access tokens, please refer to the [Auth0 documentation](https://auth0.com/docs/). (Client access token are also known as machine-to-machine tokens in the Auth0 docs.)
+> publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. For more in-depth information about client access tokens, please refer to the [Auth0 documentation](https://auth0.com/docs/flows#client-credentials-flow).
 
 Read on below to see a concrete example of how to get a client access token for your client credentials.
 
