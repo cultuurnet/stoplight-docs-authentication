@@ -8,56 +8,21 @@
 > - https://auth0.com/docs/architecture-scenarios/spa-api
 > - https://auth0.com/docs/api/authentication#authorization-code-flow
 > - https://auth0.com/docs/authorization/configure-silent-authentication
+> - https://auth0.com/docs/flows/authorization-code-flow
+> - https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce
 
 ## Overview
 
 User access tokens can be requested through various ways, each specific to the kind of application that you build.
 
-Applications that have a server-side backend or another place to **securely store their API client's secret** can use the [Authorization Code Flow](#authorization-code-flow). (**Most regular web applications.**)
+**Regular web applications** that have a server-side backend to securely store their API client's secret can use the [Authorization Code Flow](#authorization-code-flow)
 
-\[To do: Document what client-side apps can use\]
-
-> ##### Auth0
-> publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. This page gives an overview of how to obtain a user access token via Auth0, but for some details the Auth0 documentation will be linked in case you require more information.
+**Native, mobile, and single-page applications** should use the [Authorization Code Flow with Proof Key for Code Exchange](#authorization-code-flow-with-proof-key-for-code-exchange), which does not require a client secret, since they do not have a place to securely store that.
 
 ## Authorization Code Flow
 
 \[To do\: Document]
 
-## SPA flow \[to do: rename\]
+## Authorization Code Flow with Proof Key for Code Exchange (PKCE)
 
-\[To decide\: Do we even want to use the implicit grant for new SPAs? https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce ]
-
-Applications that only have a frontend, typically single-page-applications (SPA) in Javascript, can obtain a user access token using the [implicit grant flow](https://auth0.com/docs/architecture-scenarios/spa-api/part-1#implicit-grant) on the authorization server.
-
-This flow does not require a client secret like the authorization flow for regular web applications does, and is thus safe to be used from a frontend application. It consists of 4 steps:
-
-![](../assets/images/user-access-token-flow-spa.png)
-
-1. Your app initiates the flow and redirects the browser to an URL on the authorization server where the user can authenticate.
-
-2. The user logs in or creates an account on the authorization server.
-
-3. The authorization server redirects the user back to your app with an access token in the hash fragment of the URI. Your app can now extract the token from the hash fragment.
-
-4. Done! Your app can now use the access token to call the API on behalf of the user. 🎉
-
-### Redirecting to the authorization server
-
-\[To do\: Document concrete info like URLs of the servers, correct path, what parameters to include]
-
-- production: https://profile.uitid.be ?
-- testing: ?
-
-- audience `https://api.publiq.be`
-- [scope](./scopes.md)
-- redirect_uri (+ how to configure? contact?)
-- client_id
-- response_type `id_token token`
-- state ?
-- prompt `none` ?
-- ... see https://auth0.com/docs/api/authentication#authorize-application
-
-### Storing tokens
-
-\[To do\: Document not to store token in cookie/localStorage but use silent login?]
+\[To do\: Document]
