@@ -17,7 +17,7 @@ User access tokens can be requested through various ways, each specific to the k
 
 **Regular web applications** that have a server-side backend to securely store their API client's secret can use the [Authorization Code Flow](#authorization-code-flow)
 
-**Native, mobile, and single-page applications** should use the [Authorization Code Flow with Proof Key for Code Exchange](#authorization-code-flow-with-proof-key-for-code-exchange), which does not require a client secret, since they do not have a place to securely store that.
+**Native, mobile, and single-page applications** should use the [Authorization Code Flow with Proof Key for Code Exchange](#authorization-code-flow-with-proof-key-for-code-exchange-pkce), which does not require a client secret, since they do not have a place to securely store that.
 
 ## Authorization Code Flow
 
