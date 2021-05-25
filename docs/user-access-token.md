@@ -13,7 +13,7 @@
 
 ## Overview
 
-User access tokens can be requested through various ways, each specific to the kind of application that you build.
+User access tokens can be requested through one of two ways, depending on the type of application that you're building.
 
 **Regular web applications** that have a server-side backend to securely store their API client's secret can use the [Authorization Code Flow](#authorization-code-flow)
 
