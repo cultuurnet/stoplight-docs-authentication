@@ -6,6 +6,8 @@
 > - https://confluence.uitdatabank.be/display/UITIDV2/Authorize+publiq+APIs+using+Auth0+acces+token
 > - https://confluence.uitdatabank.be/display/UITIDV2/How+to+integrate+UITIDv2+authentication+%28Auth0%29+in+your+project
 > - https://auth0.com/docs/architecture-scenarios/spa-api
+> - https://auth0.com/docs/api/authentication#authorization-code-flow
+> - https://auth0.com/docs/authorization/configure-silent-authentication
 
 ## Overview
 
