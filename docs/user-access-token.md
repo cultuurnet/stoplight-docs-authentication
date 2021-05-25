@@ -38,6 +38,9 @@ This flow does not require a client secret like the authorization flow for regul
 
 \[To do\: Document concrete info like URLs of the servers, correct path, what parameters to include]
 
+- production: https://profile.uitid.be ?
+- testing: ?
+
 - audience `https://api.publiq.be`
 - [scope](./scopes.md)
 - redirect_uri (+ how to configure? contact?)
