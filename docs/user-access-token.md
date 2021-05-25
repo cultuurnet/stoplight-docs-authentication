@@ -11,16 +11,22 @@
 
 ## Overview
 
-\[To do: document what the difference is between a regular web application and a frontend application\]
+User access tokens can be requested through various ways, each specific to the kind of application that you build.
+
+Applications that have a server-side backend or another place to **securely store their API client's secret** can use the [Authorization Code Flow](#authorization-code-flow). (**Most regular web applications.**)
+
+\[To do: Document what client-side apps can use\]
 
 > ##### Auth0
 > publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. This page gives an overview of how to obtain a user access token via Auth0, but for some details the Auth0 documentation will be linked in case you require more information.
 
-## Regular web applications
+## Authorization Code Flow
 
 \[To do\: Document]
 
-## Frontend applications (SPA)
+## SPA flow \[to do: rename\]
+
+\[To decide\: Do we even want to use the implicit grant for new SPAs? https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce ]
 
 Applications that only have a frontend, typically single-page-applications (SPA) in Javascript, can obtain a user access token using the [implicit grant flow](https://auth0.com/docs/architecture-scenarios/spa-api/part-1#implicit-grant) on the authorization server.
 
