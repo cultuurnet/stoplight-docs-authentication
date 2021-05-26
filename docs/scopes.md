@@ -10,6 +10,8 @@ When using [client identification](./client-identification.md), you do not need 
 
 > ##### Multiple APIs and scopes
 > You only need **one API client id** and secret to communicate with multiple of publiq's APIs. You can also communicate with multiple APIs with a **single token**, but the token needs to contain all the required scopes for the APIs.
+>
+> To request multiple scopes when requesting a token, **separate them with a space**.
 
 ## Possible scopes
 
