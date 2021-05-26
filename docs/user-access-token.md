@@ -53,7 +53,7 @@ Additionally, if you want to use the PKCE flow you will also need to specify:
 
 - **Allowed Origins (CORS)**: The domain name(s) of the application(s) that you will be using the PKCE flow on. For example `example.com`.
 
-> For more info, see the Auth0 documentation on [application URIs](https://auth0.com/docs/get-started/dashboard/application-settings#application-uris).
+> For more info, see the Auth0 documentation about [application URIs](https://auth0.com/docs/get-started/dashboard/application-settings#application-uris).
 
 <!-- theme: success -->
 
