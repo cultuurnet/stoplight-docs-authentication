@@ -20,9 +20,9 @@ Below you can find a short overview of how each authentication method works.
 
 ## Client identification
 
-API endpoints that require no real authentication but need to know what client is accessing it for customization and technical support reasons use [Client identification](Authentication-methods/Client-identification.md). 
+API endpoints that require no real authentication but need to know what client is accessing it for customization and technical support reasons use [Client identification](./client-identification.md). 
 
-Usually used by APIs that need to provide info to anonymous users in web browsers, for example [Search API 3](https://publiq.stoplight.io/docs/uitdatabank/reference/Search-API.v3.json).
+Usually used by APIs that need to provide info to anonymous users in web browsers, for example UiTdatabank's Search API.
 
 - ✅ Suitable for frontend applications
 - ✅ Suitable for backend applications
@@ -39,7 +39,7 @@ Most API endpoints that require a token accept both _**client** access tokens_ a
 
 ### Client access tokens
 
-API endpoints that support the authentication of an API client with a client id and client secret use [Client access tokens](Authentication-methods/Client-access-token.md).
+API endpoints that support the authentication of an API client with a client id and client secret use [Client access tokens](./client-access-token.md).
 
 - ❌ Not suitable for frontend applications
 - ✅ Suitable for backend applications
@@ -48,7 +48,7 @@ API endpoints that support the authentication of an API client with a client id 
 
 ### User access tokens
 
-API endpoints that support authentication as a user use [User access tokens](Authentication-methods/User-access-token.md). 
+API endpoints that support authentication as a user use [User access tokens](./user-access-token.md). 
 
 Usually used in situations where a user will log in through publiq's UiTID service and your application will then make requests in that user's name.
 
@@ -63,7 +63,7 @@ Both _client access tokens_ and _user access tokens_ expire after a period of ti
 
 Instead keep using your token until you get a `401` response from an API endpoint, which indicates that the token has expired. Or use the `expires_in` property that is included in the response with your token when you request one to determine the lifetime of the token.
 
-To get a new client access token, you can simply request a new one using your client id and secret as described in [Client access tokens](Authentication-methods/Client-access-token.md).
+To get a new client access token, you can simply request a new one using your client id and secret as described in [Client access tokens](./client-access-token.md).
 
-To get a new user access token, you will need to let your user login again as described in [User access tokens](Authentication-methods/User-access-token.md).
+To get a new user access token, you will need to let your user login again as described in [User access tokens](./user-access-token.md).
 
