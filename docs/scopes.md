@@ -19,4 +19,4 @@ When using [client identification](./client-identification.md), you do not need 
 
 ## Adding scopes to your API client
 
-If you already have a client id and secret, but it is missing scopes that you need, contact \[who?\]
+If you already have a client id and secret, but it is missing scopes that you need, please send an email to vragen@uitdatabank.be with your client id (but not your client secret!) and a short summary of what scopes you need and why.
