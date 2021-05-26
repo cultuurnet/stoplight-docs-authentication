@@ -45,9 +45,12 @@ Content-Type: application/json
   "client_id": "YOUR_CLIENT_ID",
   "client_secret": "YOUR_CLIENT_SECRET",
   "audience": "https://api.publiq.be",
+  "scope": "https://api.publiq.be/auth/uitpas https://api.publiq.be/auth/uitdatabank-entry"
   "grant_type": "client_credentials"
 }
 ```
+
+In this example we're requesting a token with permission to access the UiTPAS API and the UiTdatabank Entry API. See [scopes](./scopes.md) for more info.
 
 The possible hosts for the authentication servers are:
 - Testing environment: `https://account-test.uitid.be`
@@ -69,7 +72,7 @@ HTTP/1.1 200 OK
 
 {
  "access_token": "YOUR_ACCESS_TOKEN",
- "scope": "https://api.publiq.be/auth/uitpas",
+ "scope": "https://api.publiq.be/auth/uitpas https://api.publiq.be/auth/uitdatabank-entry"
  "expires_in": 86400,
  "token_type": "Bearer"
 }
