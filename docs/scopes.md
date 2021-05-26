@@ -20,3 +20,11 @@ When using [client identification](./client-identification.md), you do not need 
 ## Adding scopes to your API client
 
 If you already have a client id and secret, but it is missing scopes that you need, please send an email to vragen@uitdatabank.be with your client id (but not your client secret!) and a short summary of what scopes you need and why.
+
+## Additional permissions
+
+Each API can require additional permissions for specific endpoints. These permissions are managed inside each separate API and do not work with scopes.
+
+For example inside UiTPAS, your API client can be allowed to search passholders inside a specific card system, but not other card systems. Or you may or may not be able to register ticket sales.
+
+If your client or user is missing required permissions for functionality needed in your app, contact vragen@uitdatabank.be with info on what permissions you need and for which user.
