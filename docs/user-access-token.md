@@ -70,7 +70,7 @@ Your client id and secret will also vary per environment.
 
 ## Audience
 
-Both authorization flows require an `audience` parameter when redirecting the user to the authorization server to log in. In both scenario's the audience should be set to  `https://api.publiq.be`.
+Both authorization flows require an `audience` parameter when redirecting the user to the authorization server to log in. In both scenarios the audience should be set to  `https://api.publiq.be`.
 
 ## Scope
 
