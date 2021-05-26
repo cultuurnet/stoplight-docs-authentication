@@ -13,9 +13,9 @@ Both flows are standard [OAuth2](https://oauth.net/2/) flows and work largely th
 >
 > At the end of this page you can find more info about specific configuration that you will need on publiq's authorization servers, like their domain names.
 
-### Authorization Code Flow
+### Regular web applications
 
-**Regular web applications** (with a backend) should use the Authorization Code Flow with their client id and secret. The secret should always be stored and used only on the backend.
+Regular web applications **(with a backend)** should use the **Authorization Code Flow** with their client id and secret. The secret should always be stored and used only on the backend.
 
 To learn more about the Authorization Code Flow, see the [the Auth0 documentation](https://auth0.com/docs/flows/authorization-code-flow).
 
@@ -24,9 +24,13 @@ To learn more about the Authorization Code Flow, see the [the Auth0 documentatio
 > ##### SDK
 > If you want, you can use the [Regular Web Application SDK Libraries](https://auth0.com/docs/libraries#webapp) provided by Auth0 to implement this flow.
 
-### Authorization Code Flow with PKCE
+### SPA & native applications
 
-**Native (mobile & desktop)** and **frontend applications without a backend (single-page applications)** on the other hand do not have a way to securely store their client secret. Native binaries can be decompiled to reveal the secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. Those applications should instead use the Authorization Code Flow with PKCE (_Proof Key for Code Exchange_).
+Native (mobile & desktop) and frontend applications **without a backend** (single-page applications), on the other hand, do not have a way to securely store their client secret. 
+
+Native binaries can be decompiled to reveal their secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. 
+
+These applications should instead use the **Authorization Code Flow with PKCE** (_Proof Key for Code Exchange_).
 
 The main difference with the regular Authorization Code Flow is that with PKCE, your app can utilize a dynamically-generated secret to initiate and validate the flow instead of a fixed client secret which should never be made public.
 
@@ -35,7 +39,7 @@ To learn more about the Authorization Code Flow with PKCE, see the [the Auth0 do
 <!-- theme: success -->
 
 > ##### SDK
-> If you want, you can use the [Single-Page Application (SPA) SDK Libraries](https://auth0.com/docs/libraries#spa) provided by Auth0 to implement this flow.
+> If you want, you can use the [Single-Page Application (SPA) SDK Libraries](https://auth0.com/docs/libraries#spa) provided by Auth0 to implement this flow in frontend Javascript applications. Native applications can use the [Native and Mobile Application SDK Libraries](https://auth0.com/docs/libraries#native).
 
 ## Client requirements
 
