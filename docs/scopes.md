@@ -15,7 +15,7 @@ When using [client identification](./client-identification.md), you do not need 
 
 - UiTdatabank's Entry API: `https://api.publiq.be/uitdatabank-entry`
 - UiTdatabank's Search API: `https://api.publiq.be/uitdatabank-search`
-- UiTPAS API: `https://api.publiq.be/uitdatabank-search`
+- UiTPAS API: `https://api.publiq.be/uitpas`
 
 ## Adding scopes to your API client
 
