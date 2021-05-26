@@ -2,7 +2,7 @@
 
 Because not all API clients need access to every publiq API, we work with a permission model to limit your client's access to the APIs that you need.
 
-This permission works through *scopes* that are granted to your API client on publiq's authorization server. Each API requires 1 specific scope. For example to access the UiTPAS API, your client will need to have the `https://api.publiq.be/uitpas` scope.
+This permission works through *scopes* that are granted to your API client on publiq's authorization server. Each API requires 1 specific scope. For example to access the UiTPAS API, your client will need to have the `https://api.publiq.be/auth/uitpas` scope.
 
 When requesting a [client access token](./client-access-token.md) or [user access token](./user-access-token.md), you also need to explicitly list which scopes should be included in the token. Tokens that do not include a specific API's scope cannot be used on that API. Note that you cannot request to include scopes that your client is not allowed to have access to.
 
@@ -13,9 +13,9 @@ When using [client identification](./client-identification.md), you do not need 
 
 ## Possible scopes
 
-- UiTdatabank's Entry API: `https://api.publiq.be/uitdatabank-entry`
-- UiTdatabank's Search API: `https://api.publiq.be/uitdatabank-search`
-- UiTPAS API: `https://api.publiq.be/uitpas`
+- UiTdatabank's Entry API: `https://api.publiq.be/auth/uitdatabank-entry`
+- UiTdatabank's Search API: `https://api.publiq.be/auth/uitdatabank-search`
+- UiTPAS API: `https://api.publiq.be/auth/uitpas`
 
 ## Adding scopes to your API client
 
