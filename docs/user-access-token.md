@@ -1,30 +1,79 @@
 # User access token
 
-<!-- theme: danger -->
-
-> ##### References, remove before merge!
-> - https://confluence.uitdatabank.be/display/UITIDV2/Authorize+publiq+APIs+using+Auth0+acces+token
-> - https://confluence.uitdatabank.be/display/UITIDV2/How+to+integrate+UITIDv2+authentication+%28Auth0%29+in+your+project
-> - https://auth0.com/docs/architecture-scenarios/spa-api
-> - https://auth0.com/docs/api/authentication#authorization-code-flow
-> - https://auth0.com/docs/authorization/configure-silent-authentication
-> - https://auth0.com/docs/flows/authorization-code-flow
-> - https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce
-
 ## Overview
 
-User access tokens can be requested through one of two ways, depending on the type of application that you're building.
+User access tokens are used to communicate with a publiq API in the name of a user logged in through UiTID, and can be requested through one of two ways depending on the type of application that you're building.
 
-**Regular web applications** (with a backend) should use the [Authorization Code Flow](#authorization-code-flow) with their client id and secret. The secret should always be stored and used only on the backend.
+Both flows are standard [OAuth2](https://oauth.net/2/) flows and work largely the same. In both cases you will redirect the user to the authorization server where they can login. Afterward, the user will be redirected back to your application and you will receive an authorization code. With this code you can request a user access token on the authorization server.
 
-**Native (mobile & desktop)** and **frontend applications without a backend (single-page applications)** on the other hand, do not have a way to securely store their client secret. Native binaries can be decompiled to reveal the secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. Those applications should instead use the [Authorization Code Flow with Proof Key for Code Exchange](#authorization-code-flow-with-proof-key-for-code-exchange-pkce).
+<!-- theme: info -->
 
-Both flows are standard OAuth2 flows and work largely the same. In both cases you will redirect the user to the authorization server where they can login, and afterward the user will be redirected back to your application and you will receive an authorization code. With this code you can request an access token. The main difference between the two flows is that with Proof Key for Code Exchange (PKCE), your app can utilize a dynamically-generated secret to initiate and validate the flow instead of your fixed client secret that should never be made public.
+> ##### Auth0
+> publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. Most info can be found in their documentation linked below.
+>
+> At the end of this page you can find more info about specific configuration that you will need on publiq's authorization servers, like their domain names.
 
-## Authorization Code Flow
+### Authorization Code Flow
 
-\[To do\: Document]
+**Regular web applications** (with a backend) should use the Authorization Code Flow with their client id and secret. The secret should always be stored and used only on the backend.
 
-## Authorization Code Flow with Proof Key for Code Exchange (PKCE)
+To learn more about the Authorization Code Flow, see the [the Auth0 documentation](https://auth0.com/docs/flows/authorization-code-flow).
 
-\[To do\: Document]
+<!-- theme: success -->
+
+> ##### SDK
+> If you want, you can use the [Regular Web Application SDK Libraries](https://auth0.com/docs/libraries#webapp) provided by Auth0 to implement this flow.
+
+### Authorization Code Flow with PKCE
+
+**Native (mobile & desktop)** and **frontend applications without a backend (single-page applications)** on the other hand do not have a way to securely store their client secret. Native binaries can be decompiled to reveal the secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. Those applications should instead use the Authorization Code Flow with PKCE (_Proof Key for Code Exchange_).
+
+The main difference with the regular Authorization Code Flow is that with PKCE, your app can utilize a dynamically-generated secret to initiate and validate the flow instead of a fixed client secret which should never be made public.
+
+To learn more about the Authorization Code Flow with PKCE, see the [the Auth0 documentation](https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce).
+
+<!-- theme: success -->
+
+> ##### SDK
+> If you want, you can use the [Single-Page Application (SPA) SDK Libraries](https://auth0.com/docs/libraries#spa) provided by Auth0 to implement this flow.
+
+## Client requirements
+
+Before you can use one of the Authorization Code flows above, your client needs the following configuration _on the authorization server_:
+
+- **Login URI**: The absolute URI of the page where your users will login. For example `https://example.com/login`.
+- **Callback URL(s)**: The absolute URL(s) of the page(s) where your users can be redirected back to after they log in. You can specify this callback URL whenever you redirect a user to the authorization server to log in, but it needs to be **whitelisted** first to prevent phishing attacks. For example `https://example.com/authorize`.
+- **Logout URL(s)**: The absolute URL(s) of the page(s) where your users can be redirected back to _after_ they log out. This page should also clear any tokens or other session data that you store for the user in your app. You can specify this URL whenever you redirect a user to the authorization server to log out, but it needs to be **whitelisted** first to prevent phishing attacks. For example `https://example.com/logout`.
+
+Additionally, if you want to use the PKCE flow you will also need to specify:
+
+- **Allowed Origins (CORS)**: The domain name(s) of the application(s) that you will be using the PKCE flow on. For example `example.com`.
+
+> For more info, see the Auth0 documentation on [application URIs](https://auth0.com/docs/get-started/dashboard/application-settings#application-uris).
+
+<!-- theme: success -->
+
+> To make sure your client has the correct URI configuration on the authorization server, contact vragen@uitdatabank.be.
+
+## Domains
+
+The authorization server is available on two domains, one for production and one for testing.
+
+- Production: https://account.uitid.be
+- Testing: https://account-test.uitid.be
+
+You will need to use the domain of the same environment as the environment of the API you're integrating with. 
+
+For example: To communicate with the test environment of UiTdatabank of UiTPAS, you will need a token from the test environment of the authorization server.
+
+Your client id and secret will also vary per environment.
+
+## Audience
+
+The audience that you need to request in both authorization flows should always be `https://api.publiq.be`.
+
+## Scope
+
+You will need to request one or more [scopes](./scopes.md) depending on the amount of APIs you need access to.
+
+
