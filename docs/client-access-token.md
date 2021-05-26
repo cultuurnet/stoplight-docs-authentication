@@ -69,7 +69,7 @@ HTTP/1.1 200 OK
 
 {
  "access_token": "YOUR_ACCESS_TOKEN",
- "scope": "https://api.publiq.be/uit/mailing_m2m",
+ "scope": "https://api.publiq.be/auth/uitpas",
  "expires_in": 86400,
  "token_type": "Bearer"
 }
