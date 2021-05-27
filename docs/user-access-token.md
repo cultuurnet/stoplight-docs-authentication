@@ -24,7 +24,7 @@ To learn more about the Authorization Code Flow, see the [the Auth0 documentatio
 > ##### SDK
 > If you want, you can use the [Regular Web Application SDK Libraries](https://auth0.com/docs/libraries#webapp) provided by Auth0 to implement this flow.
 
-### SPA & native applications
+### Single-page (SPA) and native applications
 
 Native (mobile & desktop) and frontend applications **without a backend** (single-page applications), on the other hand, do not have a way to securely store their client secret. 
 
