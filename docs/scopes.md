@@ -4,9 +4,11 @@ Because not all API clients need access to every publiq API, we work with a perm
 
 This permission works through *scopes* that are granted to your API client on publiq's authorization server. Each API requires 1 specific scope. For example to access the UiTPAS API, your client will need to have the `https://api.publiq.be/auth/uitpas` scope.
 
-When requesting a [client access token](./client-access-token.md) or [user access token](./user-access-token.md), you also need to explicitly list which scopes should be included in the token. Tokens that do not include a specific API's scope cannot be used on that API. Note that you cannot request to include scopes that your client is not allowed to have access to.
+No matter which of the three authentication methods you use, your API client needs to have access to the scope related to the API that you integrate with.
 
-When using [client identification](./client-identification.md), you do not need to request scopes because you do not need to request a token. Instead the API will look up your client's allowed scopes on the authorization server using the client id included in your request.
+Additionally, when using [user access tokens](./user-access-token.md) you need to explicitly list which scopes should be included in the token when you redirect the user to the authorization server.
+
+When using [client access tokens](./client-access-tokens.md) on the other hand, you can either explicitly list the scopes that should be included in the token or choose to omit them. If you omit them, the token will contain all scopes that your client has access to.
 
 > ##### Multiple APIs and scopes
 > You only need **one API client id** and secret to communicate with multiple of publiq's APIs. You can also communicate with multiple APIs with a **single token**, but the token needs to contain all the required scopes for the APIs.

@@ -80,5 +80,5 @@ Both authorization flows require an `audience` parameter when redirecting the us
 
 ## Scope
 
-When redirecting the user to the authorization server to log in, you will need to include one or more `scope`(s) that should be included in the resulting token. The exact scopes are determined by which APIs you need access to. More info can be found in the [scopes](./scopes.md) documentation page.
+When redirecting the user to the authorization server to log in, you will need to specify one or more `scope`(s) that should be included in the resulting token. The exact scopes are determined by which APIs you need access to. More info can be found in the [scopes](./scopes.md) documentation page.
 
