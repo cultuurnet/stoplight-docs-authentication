@@ -40,13 +40,13 @@ Content-Type: application/json
 }
 ```
 
-The `client_id` and `client_secret` properties should contain your client id and secret respectively. They basically act as a username and password to authenticate your client.
+The `client_id` and `client_secret` properties have to contain your client id and secret respectively. They basically act as a username and password to authenticate your client.
 
-The `audience` property should always be set to `https://api.publiq.be`.
+The `audience` property must always be set to `https://api.publiq.be`.
 
 The `scope` property determines on which APIs the token will be usable. In this example we're requesting a token with permission to access the UiTPAS API and the UiTdatabank Entry API. See [scopes](./scopes.md) for more info. If you do not include any scope, you will get a client access token that is usable on all APIs that your client has access to.
 
-Lastly the `grant_type` determines which authentication flow should be used. In this case it should be `client_credentials` to get a client access token.
+Lastly the `grant_type` determines which authentication flow should be used. In this case it has to be `client_credentials` to get a client access token.
 
 After sending your request you will get a response with a JSON body like this:
 
