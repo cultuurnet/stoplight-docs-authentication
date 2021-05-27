@@ -15,7 +15,7 @@ Both flows are standard [OAuth2](https://oauth.net/2/) flows and work largely th
 
 ### Regular web applications
 
-Regular web applications **(with a backend)** should use the **Authorization Code Flow** with their client id and secret. The secret should always be stored and used only on the backend.
+Regular web applications **(with a backend)** should use the **Authorization Code Flow** with their client id and secret. The secret must be stored and used on the backend in all circumstances, never on the frontend.
 
 To learn more about the Authorization Code Flow, see the [the Auth0 documentation](https://auth0.com/docs/flows/authorization-code-flow).
 
@@ -74,7 +74,7 @@ Your client id and secret will also vary per environment.
 
 ## Audience
 
-Both authorization flows require an `audience` parameter when redirecting the user to the authorization server to log in. In both scenarios the audience should be set to  `https://api.publiq.be`.
+Both authorization flows require an `audience` parameter when redirecting the user to the authorization server to log in. In both scenarios the audience must be set to  `https://api.publiq.be`.
 
 ## Scope
 
