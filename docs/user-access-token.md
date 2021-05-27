@@ -30,7 +30,7 @@ Native (mobile & desktop) and frontend applications **without a backend** (singl
 
 Native binaries can be decompiled to reveal their secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. 
 
-These applications should instead use the **Authorization Code Flow with PKCE** (_Proof Key for Code Exchange_).
+These applications should use the **Authorization Code Flow with PKCE** (_Proof Key for Code Exchange_).
 
 The main difference with the regular Authorization Code Flow is that with PKCE, your app can utilize a dynamically-generated secret to initiate and validate the flow instead of a fixed client secret which should never be made public.
 
