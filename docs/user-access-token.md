@@ -26,7 +26,7 @@ To learn more about the Authorization Code Flow, see the [the Auth0 documentatio
 
 ### Single-page (SPA) and native applications
 
-Native (mobile & desktop) and frontend applications **without a backend** (single-page applications), on the other hand, do not have a way to securely store their client secret. 
+Native (mobile & desktop) and frontend applications **without a backend** (single-page applications) do not have a way to securely store their client secret. 
 
 Native binaries can be decompiled to reveal their secret, and Javascript applications running in the browser are running in an inherently unsafe environment to store secrets. 
 
