@@ -41,9 +41,9 @@ To learn more about the Authorization Code Flow with PKCE, see the [the Auth0 do
 > ##### SDK
 > If you want, you can use the [Single-Page Application (SPA) SDK Libraries](https://auth0.com/docs/libraries#spa) provided by Auth0 to implement this flow in frontend Javascript applications. Native applications can use the [Native and Mobile Application SDK Libraries](https://auth0.com/docs/libraries#native).
 
-## Client requirements
+## Client configuration
 
-Before you can use one of the Authorization Code flows above, your client needs the following configuration _on the authorization server_:
+Before you can use one of the Authorization Code flows above, your client needs the following configuration **on the authorization server**:
 
 - **Login URI**: The absolute URI of the page where your users will login. For example `https://example.com/login`.
 - **Callback URL(s)**: The absolute URL(s) of the page(s) where your users can be redirected back to after they log in. You can specify this callback URL whenever you redirect a user to the authorization server to log in, but it needs to be **whitelisted** first to prevent phishing attacks. For example `https://example.com/authorize`.
@@ -57,7 +57,9 @@ Additionally, if you want to use the PKCE flow you will also need to specify:
 
 <!-- theme: success -->
 
-> To make sure your client has the correct URI configuration on the authorization server, contact vragen@uitdatabank.be.
+> A way to configure your client's settings on the authorization server will be provided in the future.
+> 
+> In the meantime you can contact vragen@uitdatabank.be to make sure your client has the correct URI configuration on the authorization server or make changes.
 
 ## Domains
 
