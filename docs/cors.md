@@ -21,4 +21,4 @@ This is possible on publiq's API endpoints that require no authentication at all
 
 ## Whitelisting your domain
 
-If you need to send requests to API endpoints from a frontend application and cannot use simple requests, we are happy to add your domain name(s) to our list of allowed CORS domains. Contact vragen@publiq.be for more information.
+If you need to send requests to API endpoints from a frontend application and cannot use simple requests, we are happy to add your domain name(s) to our list of allowed CORS domains. Contact vragen@uitdatabank.be for more information.
