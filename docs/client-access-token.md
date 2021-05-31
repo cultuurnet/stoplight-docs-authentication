@@ -2,21 +2,22 @@
 
 ## Overview
 
-Client access tokens are used to secure API endpoints that require more robust authentication than [client identification](./client-identification.md) between two _backend_ systems.
+Client access tokens are used to secure API endpoints that require more robust authentication than [client identification](./client-identification.md) between two *backend* systems.
 
 Before accessing an API endpoint like this, a client needs to obtain a client access token using its credentials (the client id and secret) from publiq's authorization server.
 
-1. The client makes a request to the authorization server with its id and secret.
+1.  The client makes a request to the authorization server with its id and secret.
 
-2. The authorization server validates the request and, if successful, sends a response with an access token.
+2.  The authorization server validates the request and, if successful, sends a response with an access token.
 
-3. The client can now use the access token to call the API by using the obtained access token as a `Bearer` token in the `Authorization` header.
+3.  The client can now use the access token to call the API by using the obtained access token as a `Bearer` token in the `Authorization` header.
 
 <!-- theme: warning -->
 
 > ##### Security warnings
-> - ✅ **Always** request a client access token from a **backend** application
-> - ❌ **Never** use or expose your client access token from a **frontend** application
+>
+> *   ✅ **Always** request a client access token from a **backend** application
+> *   ❌ **Never** use or expose your client access token from a **frontend** application
 >
 > If you use or store your client secret or client access token in a frontend application they can be **stolen** and **abused** and your client will get blocked!
 >
@@ -72,28 +73,29 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 <!-- theme: success -->
 
 > ##### Caching tokens
-> Make sure to **cache and reuse** the obtained client access token for as long as possible. Do not request a new access token for each API request you make. 
-> 
+>
+> Make sure to **cache and reuse** the obtained client access token for as long as possible. Do not request a new access token for each API request you make.
+>
 > The response with your access token will include an `expires_in` parameter with the exact expiration time in seconds. You can make your cached token expire after that time has elapsed and request a new one then. Another option is to not look at the expiration time and request a new token as soon as you get a `401` response from an API, indicating that the token has expired.
 
 <!-- theme: info -->
 
 > ##### Auth0
+>
 > publiq currently uses [Auth0](https://auth0.com/) as the implementation of its authentication and authorization service. For more in-depth information about client access tokens, please refer to the [Auth0 documentation](https://auth0.com/docs/flows#client-credentials-flow).
 
 ## Domains
 
 The authorization server is available on two domains, one for production and one for testing.
 
-- Production: https://account.uitid.be
-- Testing: https://account-test.uitid.be
+*   Production: https://account.uitid.be
+*   Testing: https://account-test.uitid.be
 
-You will need to use the domain of the same environment as the environment of the API you're integrating with. 
+You will need to use the domain of the same environment as the environment of the API you're integrating with.
 
 For example: To communicate with the test environment of UiTdatabank of UiTPAS, you will need a token from the test environment of the authorization server.
 
 Your client id and secret will also vary per environment.
-
 
 ## Try it out!
 
