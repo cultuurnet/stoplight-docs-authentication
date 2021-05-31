@@ -19,7 +19,7 @@ When using [client access tokens](./client-access-token.md) on the other hand, y
 ## Possible scopes
 
 API | Scope
-\---------|----------
+---------|----------
 [UiTPAS API](https://publiq.stoplight.io/docs/uitpas) | https://api.publiq.be/auth/uitpas
 
 ## Adding scopes to your API client
