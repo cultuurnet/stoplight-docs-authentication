@@ -25,13 +25,18 @@
       "uri": "docs/user-access-token.md"
     },
     {
+      "type": "divider",
+      "title": "Other"
+    },
+    {
       "type": "item",
       "title": "Scopes",
       "uri": "docs/scopes.md"
     },
     {
-      "type": "divider",
-      "title": "Other"
+      "type": "item",
+      "title": "Errors",
+      "uri": "docs/errors.md"
     },
     {
       "type": "item",
