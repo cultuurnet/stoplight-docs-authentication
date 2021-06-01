@@ -4,7 +4,9 @@ This page contains an overview of all possible error types inside the `https://a
 
 ## unauthorized
 
-`https://api.publiq.be/probs/auth/unauthorized`
+-   **Complete type:** `https://api.publiq.be/probs/auth/unauthorized`
+-   **Title**: `Unauthorized`
+-   **Status**: `401`
 
 Your request is missing the required credentials to authenticate.
 
@@ -18,7 +20,9 @@ Possible causes:
 
 ## forbidden
 
-`https://api.publiq.be/probs/auth/forbidden`
+-   **Complete type:** `https://api.publiq.be/probs/auth/forbidden`
+-   **Title**: `Forbidden`
+-   **Status**: `403`
 
 Your request was successfully authenticated but you do not have permission to perform this particular request.
 
