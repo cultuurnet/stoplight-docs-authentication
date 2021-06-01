@@ -23,6 +23,10 @@ Before accessing an API endpoint like this, a client needs to obtain a client ac
 >
 > If you need to do API calls from a frontend application, use [client identification](./client-identification.md) or a [user access token](./user-access-token.md) depending on which methods the API endpoint accepts.
 
+> ##### OAuth2
+>
+> Client access tokens are requested using the standardized [OAuth 2.0 Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/). If you are familiar with this flow, you can skip most of the example flow below. Do check the info about the required `audience` and `scope` properties though.
+
 ## Example flow
 
 To obtain a client access token, send a `POST` request to the `/oauth/token` endpoint of the authentication server with a JSON body like this:
