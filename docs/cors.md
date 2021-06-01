@@ -4,9 +4,7 @@
 
 For example when you make a request from a **frontend** application to an external API endpoint, you might see the following error in your browser's console:
 
-```
-Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at ...
-```
+    Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at ...
 
 This policy is built into modern browsers to for example prevent [CSRF](https://owasp.org/www-community/attacks/csrf) attacks.
 
@@ -14,10 +12,10 @@ This policy is built into modern browsers to for example prevent [CSRF](https://
 
 In some cases you can circumvent the Same Origin Policy, and thus the need for CORS, by only sending [simple requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests).
 
-This is possible on publiq's API endpoints that require no authentication at all or only [client identification](Authentication-methods/Client-identification.md).
+This is possible on publiq's API endpoints that require no authentication at all or only [client identification](./client-identification.md).
 
-- When you send a request to an endpoint that requires no authentication, make sure **not to send an `Authorization` header** with a token even if you have one.
-- When you send a request to an endpoint that requires client identification, you can make your request a "simple" request by **using the `clientId` query parameter** instead of the `x-client-id` header (because simple requests can only contain very specific headers).
+*   When you send a request to an endpoint that requires no authentication, make sure **not to send an `Authorization` header** with a token even if you have one.
+*   When you send a request to an endpoint that requires client identification, you can make your request a "simple" request by **using the `clientId` query parameter** instead of the `x-client-id` header (because simple requests can only contain very specific headers).
 
 ## Whitelisting your domain
 
