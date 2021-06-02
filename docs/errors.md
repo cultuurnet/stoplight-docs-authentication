@@ -2,6 +2,8 @@
 
 This page contains an overview of all possible error types inside the `https://api.publiq.be/probs/auth/` namespace that can be returned by publiq's APIs. (Not errors that can occur on Auth0 while trying to request a token!)
 
+> For more info about error handling on our APIs in general, see the dedicated [Errors](https://publiq.stoplight.io/docs/errors) space.
+
 ## unauthorized
 
 -   **Complete type:** `https://api.publiq.be/probs/auth/unauthorized`
