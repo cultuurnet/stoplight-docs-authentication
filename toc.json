@@ -30,11 +30,6 @@
     },
     {
       "type": "item",
-      "title": "Scopes",
-      "uri": "docs/scopes.md"
-    },
-    {
-      "type": "item",
       "title": "Errors",
       "uri": "docs/errors.md"
     },
