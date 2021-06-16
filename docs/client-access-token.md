@@ -25,7 +25,7 @@ Before accessing an API endpoint like this, a client needs to obtain a client ac
 
 > ##### OAuth2
 >
-> Client access tokens are requested using the standardized [OAuth 2.0 Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/). If you are familiar with this flow, you can skip most of the example flow below. Do check the info about the required `audience` and `scope` properties though.
+> Client access tokens are requested using the standardized [OAuth 2.0 Client Credentials Grant](https://oauth.net/2/grant-types/client-credentials/). If you are familiar with this flow, you can skip most of the example flow below. Do check the info about the required `audience` property though.
 
 ## Example flow
 
@@ -40,7 +40,6 @@ Content-Type: application/json
   "client_id": "YOUR_CLIENT_ID",
   "client_secret": "YOUR_CLIENT_SECRET",
   "audience": "https://api.publiq.be",
-  "scope": "https://api.publiq.be/auth/uitpas https://api.publiq.be/auth/uitdatabank-entry"
   "grant_type": "client_credentials"
 }
 ```
@@ -48,8 +47,6 @@ Content-Type: application/json
 The `client_id` and `client_secret` properties have to contain your client id and secret respectively. They basically act as a username and password to authenticate your client.
 
 The `audience` property must always be set to `https://api.publiq.be`.
-
-The `scope` property determines on which APIs the token will be usable. In this example we're requesting a token with permission to access the UiTPAS API and the UiTdatabank Entry API. See [scopes](./scopes.md) for more info. If you do not include any scope, you will get a client access token that is usable on all APIs that your client has access to.
 
 Lastly the `grant_type` determines which authentication flow should be used. In this case it has to be `client_credentials` to get a client access token.
 
@@ -60,7 +57,6 @@ HTTP/1.1 200 OK
 
 {
  "access_token": "YOUR_ACCESS_TOKEN",
- "scope": "https://api.publiq.be/auth/uitpas https://api.publiq.be/auth/uitdatabank-entry"
  "expires_in": 86400,
  "token_type": "Bearer"
 }
