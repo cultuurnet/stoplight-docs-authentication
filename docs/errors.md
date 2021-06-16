@@ -30,5 +30,5 @@ Your request was successfully authenticated but you do not have permission to pe
 
 Possible causes:
 
-*   Your client has no access to this API, or your token does not include the correct token to access this API. See [scopes](./scopes.md) for more info.
+*   Your client has no access to this API.
 *   You are trying to perform an action on a specific resource inside the API to which you don't have access. Check the specific API endpoint's documentation for more info about possibly required permissions.

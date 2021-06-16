@@ -80,7 +80,3 @@ Your client id and secret will also vary per environment.
 ## Audience
 
 Both authorization flows require an `audience` parameter when redirecting the user to the authorization server to log in. In both scenarios the audience must be set to  `https://api.publiq.be`.
-
-## Scope
-
-When redirecting the user to the authorization server to log in, you will need to specify one or more `scope`(s) that should be included in the resulting token. The exact scopes are determined by which APIs you need access to. More info can be found in the [scopes](./scopes.md) documentation page.
