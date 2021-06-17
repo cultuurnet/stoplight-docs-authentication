@@ -1,20 +1,20 @@
 # Overview
 
-Each publiq API supports one or more authentication methods, depending on the security that it requires.
+Each publiq API supports one of three authentication methods, depending on the security that it requires.
 
 ## When to use which method
 
 Which authentication method you need to use will in the first place be **determined by which API endpoint(s) you want to access**.
 
-There are 5 possible scenarios for an endpoint:
+There are 3 possible scenarios for an endpoint:
 
 1.  The endpoint requires **no authentication** at all. For example fetching the JSON representation of a specific event from UiTdatabank.
 2.  The endpoint requires **[client identification](#client-identification)**. You will only need to include your client id in the request and you don't need a token. For example Search API.
-3.  The endpoint accepts **both [user access tokens](#user-access-tokens) or [client access tokens](#client-access-tokens)**. You can pick whatever token type is best suited to your situation. See their respective documentation for more info.
-4.  The endpoint requires [**client** access tokens](#client-access-tokens) *specifically*. You will need to fetch a token using your client id and secret from a backend.
-5.  The endpoint requires [**user** access tokens](#user-access-tokens) *specifically*. You will need to let your end user log in through UiTID and use the resulting token.
+3.  The endpoint requires a **[token](#tokens)**. You can pick whatever token type is best suited to your situation (almost every endpoint will support both types). See their respective documentation for more info.
 
-You can find the authentication method(s) that an endpoint supports in its own documentation. Usually an endpoint will either require **client identification**, or it will require a **token of any kind**. Only very few endpoints will require a specific token type.
+> An endpoint that requires authentication will require either client identification (#2) **or** a token (#3), never both.
+
+You can find the authentication method(s) that an endpoint supports in its own documentation.
 
 Below you can find a short overview of how each authentication method works.
 
@@ -33,7 +33,7 @@ Usually used by APIs that need to provide info to anonymous users in web browser
 
 API endpoints that expose private information and/or allow write access require a token to authenticate.
 
-Most API endpoints that require a token accept both ***client** access tokens* and ***user** access tokens*. Only some few exceptions require one or the other. For example an endpoint to request info on the current user will always require a user access token.
+Most API endpoints that require a token accept both **client** access tokens and **user** access tokens. Only some few exceptions require one or the other. For example an endpoint to request info on the current user will always require a user access token.
 
 > If an endpoint accepts both client and user access tokens, you only need to provide one or the other, not both.
 
@@ -50,7 +50,7 @@ API endpoints that support the authentication of an API client with a client id 
 
 API endpoints that support authentication as a user use [User access tokens](./user-access-token.md).
 
-Usually used in situations where a user will log in through publiq's UiTID service and your application will then make requests in that user's name.
+Usually used in situations where a user will log in through publiq's **UiTID** service and your application will then make requests in that user's name.
 
 *   ✅ Suitable for frontend applications
 *   ✅ Suitable for backend applications
