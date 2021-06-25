@@ -80,6 +80,11 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 > 1. Cache the `expires_in` property included in the token response, and the time that you requested the token. Using these two parameters, you can calculate the expiration time of the token and request a new one when it is expired. Note that if you follow this approach, you should account for clock skew between your server and the APIs' servers, so it's best to already request a new token a couple of minutes before the cached one will expire.
 > 2. Keep using the same cached token until you get a `401` response from an API endpoint, at which point you can request a new token and perform the failed request again with the new token. Note that you will need to set a maximum number of retries if you follow this approach, to prevent an infinite loop if there happens to be an issue that prevents you from getting a valid token.
 
+<!-- theme: warning -->
+
+> ##### Parsing tokens
+> Do not rely on being able to parse a token as a JWT, for example to check its expiration time. While publiq's access tokens are JWTs right now, this is not guaranteed to always be the case and it might happen that you get a token that is not a parseable JWT at some point in the future.
+
 <!-- theme: info -->
 
 > ##### Auth0
