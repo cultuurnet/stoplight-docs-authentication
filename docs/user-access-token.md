@@ -88,6 +88,8 @@ After you have received your user access token through one of the two OAuth flow
 1. Cache the `expires_in` property included in the token response, and the time that you requested the token. Using these two parameters, you can calculate the expiration time of the token and request a new one when it is expired. Note that if you follow this approach, you should account for clock skew between your server and the APIs' servers, so it's best to already request a new token a couple of minutes before the cached one will expire.
 2. Keep using the same cached token until you get a `401` response from an API endpoint, at which point you can request a new token and perform the failed request again with the new token.
 
-<!-- theme: warning -->
+## Token parsing
 
-> Avoid parsing the token as a JWT to check its expiration time. While publiq's access tokens are JWTs right now, this is not guaranteed to always be the case and it might happen that you get a token that is not a parseable JWT at some point in the future.
+Avoid parsing the token as a JWT, for example to check its expiration time. While publiq's access tokens are JWTs right now, this is not guaranteed to always be the case and it might happen that you get a token that is not a parseable JWT at some point in the future.
+
+Claims inside the token are also not guaranteed to be stable and may change over time.

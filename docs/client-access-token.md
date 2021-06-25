@@ -84,6 +84,8 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 > ##### Parsing tokens
 > Do not rely on being able to parse a token as a JWT, for example to check its expiration time. While publiq's access tokens are JWTs right now, this is not guaranteed to always be the case and it might happen that you get a token that is not a parseable JWT at some point in the future.
+>
+> Claims inside the token are also not guaranteed to be stable and may change over time.
 
 <!-- theme: info -->
 
