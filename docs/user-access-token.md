@@ -90,6 +90,6 @@ After you have received your user access token through one of the two OAuth flow
 
 ## Token parsing
 
-Avoid parsing the token as a JWT, for example to check its expiration time. While publiq's access tokens are JWTs right now, this is not guaranteed to always be the case and it might happen that you get a token that is not a parseable JWT at some point in the future.
+<!-- theme: warning -->
 
-Claims inside the token are also not guaranteed to be stable and may change over time.
+> **Never** parse a user access token as a JWT, for example to check its expiration time. It is not guaranteed that a user access token will always be a JWT. The claims inside the token can also change, so you should not rely on them.
