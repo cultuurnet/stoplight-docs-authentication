@@ -6,17 +6,10 @@ For example when you make a request from a **frontend** application to an extern
 
     Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at ...
 
-This policy is built into modern browsers to for example prevent [CSRF](https://owasp.org/www-community/attacks/csrf) attacks.
+This policy is built into modern browsers to for example prevent [CSRF](https://owasp.org/www-community/attacks/csrf) attacks due to the browser making an authenticated request to another domain using cookies, without the consent or the knowledge of the user.
 
-## Circumventing Same Origin Policy & CORS
+Additionally the Same Origin Policy prevents attacks at websites hosted on an intranet by limiting the requests that a website can make to another website through a browser.
 
-In some cases you can circumvent the Same Origin Policy, and thus the need for CORS, by only sending [simple requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests).
+## CORS on publiq's APIs
 
-This is possible on publiq's API endpoints that require no authentication at all or only [client identification](./client-identification.md).
-
-*   When you send a request to an endpoint that requires no authentication, make sure **not to send an `Authorization` header** with a token even if you have one.
-*   When you send a request to an endpoint that requires client identification, you can make your request a "simple" request by **using the `clientId` query parameter** instead of the `x-client-id` header (because simple requests can only contain very specific headers).
-
-## Whitelisting your domain
-
-If you need to send requests to API endpoints from a frontend application and cannot use simple requests, we are happy to add your domain name(s) to our list of allowed CORS domains. Contact vragen@uitdatabank.be for more information.
+Because publiq's APIs do not work with cookies and are publicly hosted, there is no need for a strict Same Origin Policy in our case. Therefore our APIs generally allow CORS requests from any origin (unless noted otherwise).
