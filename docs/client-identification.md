@@ -20,7 +20,7 @@ Using a header can be helpful to only have to set it once depending on the progr
 
 #### Try it!
 
-Set your client id for the **test environment** in the **Headers** tab in the form below and send your request to try it out!
+Fill in your client id in the form below and send your request to try it out!
 
 ```json http
 {
@@ -45,7 +45,7 @@ Using a query parameter can be helpful for link sharing or when doing quick manu
 
 #### Try it!
 
-Set your client id for the **test environment** in the **Query** tab in the form below and send your request to try it out!
+Fill in your client id in the form below and send your request to try it out!
 
 ```json http
 {

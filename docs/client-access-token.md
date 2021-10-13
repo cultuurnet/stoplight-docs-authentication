@@ -110,15 +110,12 @@ Your client id and secret will also vary per environment.
 
 You can use the request form below to request a client access token using your client id and secret for the **test environment**. You can then use the `access_token` from the response body to authorize other example requests to the test environment in the documentation.
 
-Make sure to set your **client id** and **secret** in the **body** tab!
+Make sure to set replace `YOUR_CLIENT_ID` and `YOUR_CLIENT_SECRET` with your own **client id** and **secret**!
 
 ```json http
 {
   url: 'https://account-test.uitid.be/oauth/token',
   method: "POST",
-  headers: {
-    "content-type": "application/json"
-  },
   body: {
     "client_id": "YOUR_CLIENT_ID",
     "client_secret": "YOUR_CLIENT_SECRET",
@@ -127,3 +124,6 @@ Make sure to set your **client id** and **secret** in the **body** tab!
   }
 }
 ```
+
+<!-- theme: warning -->
+> If you get a "network error" using the form above, most likely your client id is not correct. Please double check that you are using your client id for the test environment. Alternatively copy the request sample as a curl request from the form above and check the response from the authorization server by sending the request from a command-line interface or another tool.
